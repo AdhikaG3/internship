@@ -1,0 +1,40 @@
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    # Used to display object in readable form
+    def __str__(self):
+        return f"Student Name: {self.name}, Marks: {self.marks}"
+
+    # Used to add marks of two students
+    def __add__(self, other):
+        return self.marks + other.marks
+
+    # Used to compare marks of two students
+    def __gt__(self, other):
+        return self.marks > other.marks
+
+    # Used to find length of student name
+    def __len__(self):
+        return len(self.name)
+
+
+# Creating objects
+s1 = Student("Adhika", 85)
+s2 = Student("Ravi", 78)
+
+# __str__ method
+print(s1)
+
+# __add__ method
+print("Total Marks:", s1 + s2)
+
+# __gt__ method
+if s1 > s2:
+    print("Adhika has higher marks")
+else:
+    print("Ravi has higher marks")
+
+# __len__ method
+print("Length of student name:", len(s1))
